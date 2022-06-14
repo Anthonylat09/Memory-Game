@@ -4,7 +4,8 @@
     <CardComponent 
       v-for="(card, index) in cardList" 
       :key="`card-${index}`" 
-      :value="card"/>
+      :value="card"
+    />
   </section>
 </template>
 
