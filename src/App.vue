@@ -24,10 +24,13 @@ export default {
     CardComponent
   },
   setup(){
-    const cardList = ref([])
+    const cardList = ref([]) // Array containing the cards
     const userSelection = ref([])
     const status = ref('')
 
+    /**
+     * Puts the values in the cards
+     */
     for(let i = 0; i < 16; i++){
       cardList.value.push({
         value: i,
@@ -37,6 +40,10 @@ export default {
       })
     }
 
+    /**
+     * Handles card flipping
+     * @param {*} payload 
+     */
     const flipCard = (payload) => {
       cardList.value[payload.position].visible = true
 
@@ -47,6 +54,9 @@ export default {
       }
     }
 
+    /**
+     * Monitors the state of the user selection
+     */
     watch(userSelection, (currentValue) => {
       if (currentValue.length === 2){
         const cardOne = currentValue[0]
