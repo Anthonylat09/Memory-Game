@@ -22,6 +22,8 @@ export default {
         }
     },
 
+
+    
     setup(props, context){
         const selectCard = () => {
             context.emit('select-card', {

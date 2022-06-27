@@ -12,10 +12,11 @@
     />
   </section>
   <h2>{{ status }}</h2>
+  <p>{{remainingPairs}}</p>
 </template>
 
 <script>
-import { ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 import CardComponent from './components/CardComponent'
 
 export default {
@@ -26,7 +27,23 @@ export default {
   setup(){
     const cardList = ref([]) // Array containing the cards
     const userSelection = ref([])
-    const status = ref('')
+
+    const status = computed(() => {
+      if (remainingPairs.value === 0) {
+        return 'Player wins!'
+      } else {
+        return `Remaining Pairs: ${remainingPairs.value}`
+      }
+    })
+
+
+    const remainingPairs = computed(() => {
+      const remainingCards =  cardList.value.filter(
+        card => card.matched === false
+        ).length
+
+      return remainingCards / 2
+    })
 
     /**
      * Puts the values in the cards
@@ -83,7 +100,8 @@ export default {
       cardList,
       flipCard,
       userSelection,
-      status
+      status,
+      remainingPairs
     }
   }
 }
