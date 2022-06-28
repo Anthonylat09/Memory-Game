@@ -64,17 +64,33 @@ export default {
       })
     }
 
+    const cardItems = [1, 2, 3, 4, 5, 6, 7, 8]
     /**
      * Puts the values in the cards
      */
-    for(let i = 0; i < 16; i++){
+    cardItems.forEach(item => {
       cardList.value.push({
-        value: i,
-        visible: false,
-        position: i,
+        value: item,
+        visible: true,
+        position: null,
         matched: false
       })
+
+    cardList.value.push({
+        value: item,
+        visible: true,
+        position: null,
+        matched: false
+      })
+      
+    })
+
+  cardList.value = cardList.value.map((card, index) => {
+    return {
+      ...card,
+      position: index
     }
+  })
 
     /**
      * Handles card flipping
