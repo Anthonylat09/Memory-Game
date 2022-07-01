@@ -151,6 +151,12 @@ export default {
 </script>
 
 <style>
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -158,6 +164,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  background-image: url('../public/images/back.jpg');
+  height: 100vh;
 }
 
 .card{
