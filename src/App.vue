@@ -157,6 +157,10 @@ html, body {
   padding: 0;
 }
 
+h1 {
+  margin-top: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -168,16 +172,13 @@ html, body {
   height: 100vh;
 }
 
-.card{
-  border: 5px solid #ccc;
-}
 
 .game-board{
   display: grid;
-  grid-template-columns: 100px 100px 100px 100px;
-  grid-template-rows: 100px 100px 100px 100px;
-  grid-column-gap: 30px;
-  grid-row-gap: 30px;
+  grid-template-columns: 120px 120px 120px 120px;
+  grid-template-rows: 120px 120px 120px 120px;
+  grid-column-gap: 24px;
+  grid-row-gap: 24px;
   justify-content: center;
 }
 </style>

@@ -47,7 +47,6 @@ export default {
             {{ value }} - {{ matched }}
         </div>
         <div v-else class="card-face is-back">
-            Back
         </div>
     </div>
     
@@ -55,7 +54,6 @@ export default {
 
 <style>
 .card{
-  border: 5px solid #ccc;
   position: relative;
 }
 
@@ -63,6 +61,7 @@ export default {
   width: 100%;
   height: 100%;
   position: absolute;
+  border-radius: 10px;
 }
 
 .card-face.is-front {
@@ -71,7 +70,7 @@ export default {
 }
 
 .card-face.is-back {
-    background-color: blue;
+    background-image: url('../../public/images/cardsback.png');
     color: white;
 }
 </style>
