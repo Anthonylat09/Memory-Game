@@ -12,7 +12,7 @@ export default {
         },
 
         value: {
-            type: Number,
+            type: String,
             required: true
         },
 
@@ -44,7 +44,7 @@ export default {
 <template>
     <div class="card" @click="selectCard">
         <div v-if="visible" class="card-face is-front">
-            {{ value }} - {{ matched }}
+            <img :src="`/images/${value}.png`" :alt="value"/>
         </div>
         <div v-else class="card-face is-back">
         </div>
@@ -62,10 +62,11 @@ export default {
   height: 100%;
   position: absolute;
   border-radius: 10px;
+  justify-content: center;
 }
 
 .card-face.is-front {
-    background-color: red;
+    background-image: url('../../public/images/cardsfront.png');
     color: white;
 }
 

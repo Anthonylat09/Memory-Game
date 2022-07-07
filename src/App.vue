@@ -64,7 +64,7 @@ export default {
       })
     }
 
-    const cardItems = [1, 2, 3, 4, 5, 6, 7, 8]
+    const cardItems = ['hiei', 'kurama', 'yusuke', 'kuwabara', 'genkai', 'keiko', 'toguro', 'sensui']
     /**
      * Puts the values in the cards
      */
@@ -175,8 +175,8 @@ h1 {
 
 .game-board{
   display: grid;
-  grid-template-columns: 120px 120px 120px 120px;
-  grid-template-rows: 120px 120px 120px 120px;
+  grid-template-columns: repeat(4, 120px);
+  grid-template-rows: repeat(4, 120px);
   grid-column-gap: 24px;
   grid-row-gap: 24px;
   justify-content: center;
